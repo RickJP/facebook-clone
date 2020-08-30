@@ -11,12 +11,11 @@ function Widgets() {
       adapt_container_width=true&
       hide_cover=false&show_facepile=true&
       appId"
-      frameborder="0"
+      frameBorder="0"
       width="340"
       height="100%"
       style={{ border: "none", overflow: "hidden"}}
       scrolling="no"
-      allowTransparency="true"
       allow="encrypted-media"
       ></iframe>
     </div>

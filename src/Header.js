@@ -6,15 +6,16 @@ import FlagIcon from '@material-ui/icons/Flag';
 import SubscriptionsOutlinedIcon from '@material-ui/icons/SubscriptionsOutlined';
 import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircleOutlined';
-import { Avatar, IconButton } from '@material-ui/core';
+import {Avatar, IconButton} from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
 import ForumIcon from '@material-ui/icons/Forum';
 import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-
+import {useStateValue} from './StateProvider';
 
 function Header() {
+  const [{user}, dispatch] = useStateValue();
+
   return (
     <div className='header'>
       <div className='header__left'>
@@ -25,7 +26,7 @@ function Header() {
       </div>
       <div className='header__input'>
         <SearchIcon />
-        <input placeholder="Search Facebook" type='text' />
+        <input placeholder='Search Facebook' type='text' />
       </div>
 
       <div className='header__center'>
@@ -48,8 +49,8 @@ function Header() {
 
       <div className='header__right'>
         <div className='header__info'>
-          <Avatar />
-          <h4>firefly2k</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
 
         <IconButton>
